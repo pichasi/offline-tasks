@@ -19,6 +19,7 @@ class CreateOrder:
     async def create_order(self):
 
         order_id = str(uuid.uuid1())
+        # send_msg(order_id, "New Order Created")
         self.background_task.add_task(send_msg, order_id, "New Order Created")
 
 
